@@ -1,1 +1,25 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: "Unbounded";
+  src: url(./assets/fonts/Unbounded-Regular.ttf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Unbounded";
+  src: url(./assets/fonts/Unbounded-SemiBold.ttf);
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Unbounded";
+  src: url(./assets/fonts/Unbounded-Light.ttf);
+  font-weight: 200;
+}
+
+html {
+  font-family: "Unbounded";
+  background: url(../src/assets/img/theme_sm.svg);
+  background-size: cover;
+}

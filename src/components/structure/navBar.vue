@@ -1,21 +1,20 @@
 <template>
   <nav class="
     fixed z-20
-    left-0 right-0 top-0  
-    text-white 
+    left-0 right-0 top-0
+    text-white
   " :class="changeBgNav ? 'bg-white/70 backdrop-blur-sm' : ''">
-    <div class="xl:w-[1280px] xl:m-auto flex justify-between items-center px-2 md:px-4 xl:px-10 py-2 md:py-6" :class="changeBgNav ? 'lg:py-2' : '  xl:py-10 '">
+    <div class="xl:w-[1280px] xl:m-auto flex justify-between items-center px-3.5 md:px-4 xl:px-10 py-2 md:py-6" :class="changeBgNav ? 'lg:py-2' : '  xl:py-10 '">
       <div>
         <router-link to="/">
-          <img src="../../assets/icons/main_logo_sm.svg" alt="" class="lg:hidden md:w-40 xl:w-[70px]">
-          <img src="../../assets/icons/main_logo.svg" alt="" class="max-lg:hidden md:w-40 lg:w-18 xl:w-20">
+          <img src="../../assets/icons/main_logo.svg" alt="" class="lg:hidden md:w-40 xl:w-[70px]">
         </router-link>
       </div>
 
       <div class="max-lg:hidden lg:flex text-[18px] gap-14 xl:gap-20 text-black ">
         <div>
           <router-link to="/#services" v-scroll-to="'#services'" class="transition-all duration-75 hover:border-b-5 border-[#4F7A23] pb-2">Услуги</router-link>
-        </div>  
+        </div>
 
         <div class="">
           <router-link to="/#projects" v-scroll-to="'#projects'" class="transition-all duration-75 hover:border-b-5 border-[#4F7A23] pb-2">Проекты</router-link>
@@ -30,33 +29,32 @@
         </div>
       </div>
 
+
       <div class="
-        flex flex-col md:flex-row items-center
-        text-[15px] md:text-[24px] lg:text-[18px] 
-        gap-1 md:gap-5
+        p-1.25
+        border-[#C9185C] border
+        rounded-full
       ">
-        <div class="text-black">+7-800-700-30-08</div>
-        <div class="
-          max-md:w-full
+        <a href="tel:+79171772625" class="
+          flex gap-1.25
+
+          bg-[#E05C92] hover:bg-[#4F7A23]/0
+          text-[12px] text-center text-white hover:text-[#4F7A23]
+          rounded-full md:rounded-4xl
+          transition-all duration-200
+          cursor-pointer
+          px-3.5 md:px-5 py-1.5 md:py-2
+
         ">
-          <a href="tel:+78007003008" class="
-            block
-            max-md:w-full 
-            bg-[#4F7A23] hover:bg-[#4F7A23]/0
-            text-center text-white hover:text-[#4F7A23]
-            rounded-2xl md:rounded-4xl 
-            transition-all duration-200   
-            cursor-pointer 
-            px-3 md:px-5 py-1.5 md:py-2 
-            border-[#4F7A23] xl:border-5
-          ">Позвонить</a>
-        </div>
+          <img src="../../assets/icons/phone.svg" alt="" class="">
+          +7 (917) 177-26-25
+        </a>
       </div>
 
       <div v-if="!openMenu" @click="openMenu = !openMenu" class="animate-opacity lg:hidden">
-        <svg width="30" height="22" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="md:w-[45px] md:h-[35px]">
-          <path d="M1 1H19M1 7H19M1 13H19" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
+        <div class="border-[#C9185C] border rounded-[11px] px-2.25 py-3">
+          <img src="../../assets/icons/burger.svg" alt="">
+        </div>
       </div>
 
       <div v-if="openMenu" @click="openMenu = !openMenu" class="animate-opacity lg:hidden">
@@ -68,15 +66,15 @@
       <transition>
         <div v-if="openMenu" class="
           lg:hidden
-          absolute 
-          right-2 top-20 md:top-35 
-          text-[15px] md:text-[24px] 
-          flex flex-col items-end 
-          gap-1 md:gap-2 
-          p-3 
-          border-2 border-[#4F7A23] 
-          rounded-[20px] 
-          bg-white/50  
+          absolute
+          right-2 top-20 md:top-35
+          text-[15px] md:text-[24px]
+          flex flex-col items-end
+          gap-1 md:gap-2
+          p-3
+          border-2 border-[#4F7A23]
+          rounded-[20px]
+          bg-white/50
           transition-opacity duration-500 animate-opacity
         ">
           <div class="py-2 px-4 md:px-7 bg-[#4F7A23] rounded-3xl">
