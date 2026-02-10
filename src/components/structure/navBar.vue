@@ -51,43 +51,79 @@
         </a>
       </div>
 
-      <div v-if="!openMenu" @click="openMenu = !openMenu" class="animate-opacity lg:hidden">
-        <div class="border-[#C9185C] border rounded-[11px] px-2.25 py-3">
+      
+        <div @click="openMenu = !openMenu" class="lg:hidden border-[#C9185C] border rounded-[11px] px-2.25 py-3">
           <img src="../../assets/icons/burger.svg" alt="">
         </div>
-      </div>
-
-      <div v-if="openMenu" @click="openMenu = !openMenu" class="animate-opacity lg:hidden">
+      
+<!-- 
+      <div v-if="openMenu" @click="openMenu = !openMenu" class="lg:hidden">
         <svg width="30" height="22" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg" class="md:w-[45px] md:h-[35px]">
           <path d="M1 24L25 1M1 1L25 24" stroke="black" stroke-width="3" stroke-linecap="round"/>
         </svg>
-      </div>
+      </div> -->
 
       <transition>
         <div v-if="openMenu" class="
           lg:hidden
           absolute
-          right-2 top-20 md:top-35
+          inset-0
+          h-screen
           text-[15px] md:text-[24px]
-          flex flex-col items-end
           gap-1 md:gap-2
-          p-3
-          border-2 border-[#4F7A23]
-          rounded-[20px]
-          bg-white/50
-          transition-opacity duration-500 animate-opacity
+          p-3   
+          bg-[#D3B9FF]
+          duration-500 animate-opacity
         ">
-          <div class="py-2 px-4 md:px-7 bg-[#4F7A23] rounded-3xl">
-            <router-link to="/#services" v-scroll-to="'#services'">Услуги</router-link>
-          </div>
-          <div class="py-2 px-4 md:px-7 bg-[#4F7A23] rounded-3xl">
-            <router-link to="/#projects" v-scroll-to="'#projects'">Проекты</router-link>
-          </div>
-          <div class="py-2 px-4 md:px-7 bg-[#4F7A23] rounded-3xl">
-            <router-link to="/#about" v-scroll-to="'#about'">О нас</router-link>
-          </div>
-          <div class="py-2 px-4 md:px-7 bg-[#4F7A23] rounded-3xl">
-            <router-link to="/#contacts" v-scroll-to="'#contacts'">Контакты</router-link>
+          <div class="flex justify-between items-center">
+            <div class="">
+              <router-link to="/">
+                <img src="../../assets/icons/main_logo_open_menu.svg" alt="" class="lg:hidden md:w-40 xl:w-[70px]">
+              </router-link>
+            </div>
+
+            <div class="max-lg:hidden lg:flex text-[18px] gap-14 xl:gap-20 text-black ">
+              <div>
+                <router-link to="/#services" v-scroll-to="'#services'" class="transition-all duration-75 hover:border-b-5 border-[#4F7A23] pb-2">Услуги</router-link>
+              </div>
+
+              <div class="">
+                <router-link to="/#projects" v-scroll-to="'#projects'" class="transition-all duration-75 hover:border-b-5 border-[#4F7A23] pb-2">Проекты</router-link>
+              </div>
+
+              <div>
+                <router-link to="/#about" v-scroll-to="'#about'" class="transition-all duration-75 hover:border-b-5 border-[#4F7A23] pb-2">О нас</router-link>
+              </div>
+
+              <div>
+                <router-link to="/#contacts" v-scroll-to="'#contacts'" class="transition-all duration-75 hover:border-b-5 border-[#4F7A23] pb-2">Контакты</router-link>
+              </div>
+            </div>
+
+            <div class="
+              p-1.25
+              border-[#C9185C] border
+              rounded-full
+            ">
+              <a href="tel:+79171772625" class="
+                flex gap-1.25
+
+                bg-[#E05C92] hover:bg-[#4F7A23]/0
+                text-[12px] text-center text-white hover:text-[#4F7A23]
+                rounded-full md:rounded-4xl
+                transition-all duration-200
+                cursor-pointer
+                px-3.5 md:px-5 py-1.5 md:py-2
+
+              ">
+                <img src="../../assets/icons/phone.svg" alt="" class="">
+                +7 (917) 177-26-25
+              </a>
+            </div>
+
+            <div @click="openMenu = !openMenu" class=" lg:hidden border-[#C9185C] border rounded-[11px] px-2.25 py-3">
+              <img src="../../assets/icons/burger.svg" alt="">
+            </div>
           </div>
         </div>
       </transition>
@@ -142,9 +178,9 @@ function observeMainNav() {
 
 <style>
 .v-leave-from {
-  opacity: 1;
+  width: 100%;
 }
 .v-leave-to {
-  opacity: 0;
+  width: 0;
 }
 </style>

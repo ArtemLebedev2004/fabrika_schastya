@@ -23,3 +23,15 @@ html {
   background: url(../src/assets/img/theme_sm.svg);
   background-size: cover;
 }
+
+@theme {
+  --animate-stretch: stretch 0.5s ease-in-out;
+  @keyframes opacity {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  };
+}
