@@ -4,7 +4,7 @@
     left-0 right-0 top-0
     text-white
   " :class="changeBgNav ? 'bg-white/70 backdrop-blur-sm' : ''">
-    <div class="xl:w-[1280px] xl:m-auto flex justify-between items-center px-4.5 md:px-4 xl:px-10 py-4 md:py-6" :class="changeBgNav ? 'lg:py-2' : '  xl:py-10 '">
+    <div class="max-lg:max-w-[450px] xl:w-[1280px] m-auto flex justify-between items-center px-4.5 md:px-4 xl:px-10 py-4 md:py-6" :class="changeBgNav ? 'lg:py-2' : '  xl:py-10 '">
       <div>
         <router-link to="/">
           <img src="../../assets/icons/main_logo.svg" alt="" class="lg:hidden md:w-40 xl:w-[70px]">
@@ -122,13 +122,13 @@
             Наша команда
           </router-link>
 
-          <div class="absolute w-[79px] h-[79px] -left-[40px] top-[19px] rounded-full border-[#654ADE] border"></div>
-          <div class="absolute w-[79px] h-[79px] -right-[40px] top-[92px] rounded-full border-[#654ADE] border"></div>
-          <div class="absolute w-[79px] h-[79px] -left-[40px] top-[167px] rounded-full border-[#654ADE] border"></div>
+          <div class="absolute w-[79px] h-[79px] -left-[30px] top-[28px] rounded-full border-[#654ADE] border"></div>
+          <div class="absolute w-[79px] h-[79px] -right-[30px] top-[111px] rounded-full border-[#654ADE] border"></div>
+          <div class="absolute w-[79px] h-[79px] -left-[30px] top-[196px] rounded-full border-[#654ADE] border"></div>
 
         </div>
 
-        <div class="flex justify-center gap-[27px] mt-[51px]">
+        <div class="flex justify-center gap-[27px] mt-[71px]">
           <img src="../../assets/icons/vk.svg" alt="" class="">
           <img src="../../assets/icons/wa.svg" alt="" class="">
           <img src="../../assets/icons/tg.svg" alt="" class="">

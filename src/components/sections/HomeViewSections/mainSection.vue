@@ -1,35 +1,66 @@
 <template>
-  <div class="xl:w-[1280px] xl:m-auto px-2 md:px-4 xl:px-10 ">
-    <div class="lg:flex  mt-[100px] md:mt-[170px] lg:mt-40 xl:mt-50 lg:gap-10">
+  <div class="relative max-lg:max-w-[450px] xl:w-[1280px] m-auto px-4.5 md:px-4 xl:px-10 ">
+    <div class="lg:flex mt-[100px] md:mt-[170px] lg:mt-40 xl:mt-50 lg:gap-10">
       <div class="lg:relative lg:basis-1/2 lg:flex lg:flex-col  lg:justify-between">
-        <div>
+        <div class="m-auto">
           <h1 id="observe_h1" class=" dsfdsg
-            text-[46px] md:text-[85px] lg:text-[63px] font-semibold 
-            leading-12 md:leading-20 lg:leading-16
+            font-[Soroka] text-[#E05C92]
+            text-[45px] md:text-[85px] lg:text-[63px]
+            leading-none
           ">
-            Проекты «под ключ» для бизнеса и частных лиц
+            Фабрика
           </h1>
-          
-          <div class="max-lg:hidden text-[25px] mt-5">
-            Гарантия 1 год
+
+          <div class="
+          font-[Soroka] text-[#E05C92]
+          text-[45px] md:text-[85px] lg:text-[63px]
+          leading-none
+          text-right
+          ">Счастья</div>
+
+          <div class="absolute left-4.5 leading-6.5 text-[19.5px] text-[#E05C92] font-semibold mt-3.5">
+            Организация праздников, ярмарок и вечеринок
+            <img src="/src/assets/icons/petard.svg" alt="" class="absolute top-[29px] left-[280px]">
+          </div>
+
+          <div class="text-[14.5px] font-light mt-[81px]">
+            Креативно поздравим родственников и коллег. Украсим вашу Свадьбу, Юбилей, Новый год, Выпускной и другие торжества
+          </div>
+
+          <div class="relative mt-[23px]">
+            <img src="/src/assets/icons/rect_main_photo.svg" alt="" class="w-full">
+
+            <div class="absolute inset-3">
+              <img src="/src/assets/img/main_photo.png" alt="" class="w-full">
+            </div>
+
+            <div class="absolute right-0 left-[85.5%] top-[3px]">
+                <img src="/src/assets/icons/ellipse_main_photo.svg" alt="" class="w-full">
+
+                <!-- <div class="bg-[#AD74E9] p-[10px]">
+                  <img src="/src/assets/icons/arrow_right.svg" alt="" class="min-w-[19px]">
+
+
+                </div> -->
+            </div>
           </div>
         </div>
-        
+
 
         <div @click="openModal = !openModal" class="
           max-lg:hidden
           relative
-          bottom-0 
-          w-full  
+          bottom-0
+          w-full
           text-[25px] text-white text-center
-          bg-[#4F7A23] 
-          rounded-4xl md:rounded-[100px]  
-          mt-[18px] md:mt-[25px] xl:mt-0  
-          py-5 hover:py-6 
+          bg-[#4F7A23]
+          rounded-4xl md:rounded-[100px]
+          mt-[18px] md:mt-[25px] xl:mt-0
+          py-5 hover:py-6
           border-[#4F7A23]
           transition-all duration-200
           cursor-pointer
-          overflow-hidden 
+          overflow-hidden
           before:content-['']
           before:animate-hologram
           before:block
@@ -53,21 +84,21 @@
 
       </div>
     </div>
-    
+
 
     <div class="lg:hidden text-center mt-[18px] md:mt-[25px] text-[20px] md:text-[30px]">
       Гарантия 1 год
     </div>
-    
+
     <div @click="openModal = !openModal" class="
       button
       overflow-hidden
-      lg:hidden 
-      relative z-10 
+      lg:hidden
+      relative z-10
       text-[20px] md:text-[30px] text-white text-center
-      bg-[#4F7A23]  
-      rounded-4xl md:rounded-[100px]  
-      mt-[18px] md:mt-[25px]  
+      bg-[#4F7A23]
+      rounded-4xl md:rounded-[100px]
+      mt-[18px] md:mt-[25px]
       py-4 md:py-8
       before:content-['']
       before:animate-hologram
@@ -86,7 +117,7 @@
       Заказать звонок
     </div>
   </div>
-  
+
   <OrderCallModal v-if="openModal" @closeModal='openModal = false'/>
 
 </template>

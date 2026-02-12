@@ -3,11 +3,11 @@
     <navBar />
   </header>
 
-  <!-- <section id="main">
+  <section id="main">
     <mainSection />
   </section>
 
-  <section id="projects">
+  <!-- <section id="projects">
     <projectsSection />
   </section>
 
@@ -26,7 +26,7 @@
 
 <script setup>
  import navBar from '@/components/structure/navBar.vue';
-// import mainSection from '../components/sections/HomeViewSections/mainSection.vue';
+import mainSection from '../components/sections/HomeViewSections/mainSection.vue';
 // import projectsSection from '../components/sections/HomeViewSections/projectsSection.vue';
 // import servicesSection from '../components/sections/HomeViewSections/servicesSection.vue';
 // import aboutSection from '../components/sections/HomeViewSections/aboutSection.vue';

@@ -1,6 +1,12 @@
 @import "tailwindcss";
 
 @font-face {
+  font-family: "Soroka";
+  src: url(./assets/fonts/SOROKA.TTF);
+  font-weight: normal;
+}
+
+@font-face {
   font-family: "Unbounded";
   src: url(./assets/fonts/Unbounded-Regular.ttf);
   font-weight: normal;
