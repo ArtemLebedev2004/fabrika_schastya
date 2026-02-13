@@ -37,8 +37,15 @@
             <div class="absolute right-0 left-[85.5%] top-[3px]">
                 <img src="/src/assets/icons/ellipse_main_photo.svg" alt="" class="w-full">
 
+                <div class="absolute inset-[7px]">
+                  <img src="/src/assets/icons/circle_main_photo.svg" alt="" class=" w-full">
+
+                  <div class="absolute inset-x-[8px] inset-y-[10px]">
+                    <img src="/src/assets/icons/arrow_right.svg" alt="" class="w-full">
+                  </div>
+                </div>
+
                 <!-- <div class="bg-[#AD74E9] p-[10px]">
-                  <img src="/src/assets/icons/arrow_right.svg" alt="" class="min-w-[19px]">
 
 
                 </div> -->
