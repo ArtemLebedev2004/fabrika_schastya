@@ -7,13 +7,19 @@
     <mainSection />
   </section>
 
-  <!-- <section id="projects">
-    <projectsSection />
+  <section id="main">
+    <GallerySection />
   </section>
 
   <section id="services">
     <servicesSection />
   </section>
+
+  <!-- <section id="projects">
+    <projectsSection />
+  </section>
+
+
 
   <section id="about">
     <aboutSection @id-active="idActiveEmit" />
@@ -27,8 +33,9 @@
 <script setup>
  import navBar from '@/components/structure/navBar.vue';
 import mainSection from '../components/sections/HomeViewSections/mainSection.vue';
+import GallerySection from '@/components/sections/HomeViewSections/gallerySection.vue';
 // import projectsSection from '../components/sections/HomeViewSections/projectsSection.vue';
-// import servicesSection from '../components/sections/HomeViewSections/servicesSection.vue';
+import servicesSection from '../components/sections/HomeViewSections/servicesSection.vue';
 // import aboutSection from '../components/sections/HomeViewSections/aboutSection.vue';
 // import navBar from '@/components/structure/navBar.vue';
 // import footerContacts from '@/components/structure/footerContacts.vue';

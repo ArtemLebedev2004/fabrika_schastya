@@ -26,18 +26,29 @@
 
 html {
   font-family: "Unbounded";
-  background: url(../src/assets/img/theme_sm.svg);
-  background-size: cover;
+  background: url(../src/assets/img/bg2.svg);
+  background-position: center top;
 }
 
 @theme {
   --animate-stretch: stretch 0.5s ease-in-out;
   @keyframes stretch {
     0% {
-      width: 0%;
+      transform: translateX(-100%);
     }
     100% {
-      width: 100%;
+      transform: translateX(0%);
     }
   };
+}
+
+@theme {
+  --color-lipink: #E05C92;
+  --color-dapink: #C9185C;
+  --color-lipurple: #AD74E9;
+  --color-dapurple: #7C00FF;
+  --color-dablue: #397BD8;
+  --color-daliblue: #4479C3;
+  --color-liblue: #22ABEF;
+  --color-liliblue: #8DD3F8;
 }

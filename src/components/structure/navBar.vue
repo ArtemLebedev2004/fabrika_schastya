@@ -68,7 +68,7 @@
         px-4.5
       "
       :class="openMenu ? 'translate-x-0' : ''">
-        <div class="flex justify-between items-center py-4">
+        <div class="flex justify-between items-center py-4 max-lg:max-w-[450px] m-auto">
           <div class="">
             <router-link to="/">
               <img src="../../assets/icons/main_logo_open_menu.svg" alt="" class="w-[58px] lg:hidden md:w-40 xl:w-[70px]">
@@ -168,7 +168,7 @@ function observeMainNav() {
   if (observe_h1.offsetTop != 0) {
     rootMarginMain = '-' + (observe_h1.clientHeight + observe_h1.offsetTop - 10) + 'px 0px 0px 0px'
   } else {
-    rootMarginMain = '-' + (observe_h1.clientHeight + 110) + 'px 0px 0px 0px'
+    rootMarginMain = '-' + (observe_h1.clientHeight + 90) + 'px 0px 0px 0px'
   }
 
   let observerBgNav = new IntersectionObserver((entries) => {
