@@ -34,10 +34,22 @@ html {
   --animate-stretch: stretch 0.5s ease-in-out;
   @keyframes stretch {
     0% {
-      transform: translateX(-100%);
+      transform: translateX(-100vw);
     }
     100% {
       transform: translateX(0%);
+    }
+  };
+}
+
+@theme {
+  --animate-opacity: opacity 0.5s ease-in-out;
+  @keyframes opacity {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
     }
   };
 }

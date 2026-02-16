@@ -1,115 +1,118 @@
 <template>
-  <div class="mt-[33px] text-[14px] flex flex-col gap-[23px]">
-    <div class="border-dapink border rounded-[40px] p-[3.5%]">
-      <div class="flex flex-col gap-[13px] bg-liliblue rounded-4xl px-[8.5%] py-[5%] ">
-        <div class="text-[17px] font-semibold text-center">
-          ЭКСПРЕСС/СТАНДАРТ ПОЗДРАВЛЕНИЕ
+  <transition>
+    <div v-if="isOpenDolls" class="text-[14px] flex flex-col gap-[23px]">
+      <serviceBlock @click="isOpenCong = !isOpenCong" 
+        title="ЭКСПРЕСС/СТАНДАРТ ПОЗДРАВЛЕНИЕ"
+        time="(10-30 МИНУТ)"
+        price="2600/3200 РУБ + ТАКСИ"
+      />
+
+      <transition>
+        <div v-if="isOpenCong" class="flex flex-col gap-[23px]">
+          <TextBlock
+            text="Поздравления Ростовых кукол - уникальное сочетание интерактивности и душевности, поскольку в отличие от других, наши персонажи умеют разговаривать, что позволяет создавать яркие поздравления и вести живой диалог с каждым именинником и гостями, делая каждое представление по-настоящему уникальным"
+          />
+          
+          <TextBlock
+            text="Мы насыщаем праздник танцевальными блоками с музыкой, подобранной специально под ваши предпочтения, обеспечивая активное вовлечение всех гостей, и гарантируем большое количество ярких, запоминающихся фотографий благодаря активному взаимодействию кукол и созданию позитивных моментов, а также предлагаем торжественную церемонию вручения подарков через наших плюшевых гигантов, что добавляет особую радость и значимость моменту"
+          />
+          
+          <div @click="isOpenCharacters = !isOpenCharacters" class="border-dapink border rounded-[29px] p-[2%]">
+            <div class="flex flex-col gap-[13px] bg-lipink rounded-[24px] px-[5%] py-[4%] ">
+              <div class=" text-center text-white">
+                ПОСМОТРЕТЬ ПЕРСОНАЖЕЙ ДЛЯ ЭТОЙ УСЛУГИ
+              </div>
+            </div>
+          </div>
+
+          <transition name="open-characters">
+            <div v-if="isOpenCharacters" class="flex flex-col gap-[23px]">
+              <ServicePhotoBlock
+                img="/src/assets/img/dandelion_sm.jpg"
+                text="ЗАЙЧИК-ОДУВАНЧИК"
+              />
+
+              <ServicePhotoBlock
+                img="/src/assets/img/marshmallows_sm.jpg"
+                text="ЗАЙКА-ЗЕФИРКА"
+              />
+              
+              <ServicePhotoBlock
+                img="/src/assets/img/snowflake_sm.jpg"
+                text="ЗАЙКА-СНЕЖИНКА"
+              />
+
+              <ServicePhotoBlock
+                img="/src/assets/img/zephyr_sm.jpg"
+                text="ЗЕФИР-ЗАЙЦЕВИЧ"
+              />
+
+              <ServicePhotoBlock
+                img="/src/assets/img/pups_boy_sm.jpg"
+                text="ПУПС МАЛЬЧИК - МИРОН"
+              />
+
+              <ServicePhotoBlock
+                img="/src/assets/img/pups_girl_sm.jpg"
+                text="ПУПС ДЕВОЧКА - ЕВА"
+              />
+
+              <ServicePhotoBlock
+                img="/src/assets/img/doll_lol_sm.jpg"
+                text="КУКЛА ЛОЛ"
+              />
+
+              <ServicePhotoBlock
+                img="/src/assets/img/minion_sm.jpg"
+                text="МИНЬОН"
+              />
+            </div>
+          </transition>        
+
+          <orderBlock />
         </div>
-
-        <div class="text-center">
-          (10-30 МИНУТ)
-        </div>
-
-        <div class="border-dablue border rounded-full px-[5%] py-[3%] text-center font-semibold text-dablue">
-          2600/3200 РУБ + ТАКСИ
-        </div>
-
-        <div class="text-center font-semibold text-dablue">
-          НАЖМИТЕ, <br> ЧТОБЫ УЗНАТЬ БОЛЬШЕ
-        </div>
-      </div>
+      </transition>
+      
+     
     </div>
-
-    <div class="backdrop-blur-xs leading-6 border-dapink border rounded-[30px] py-[5%] px-[7%]">
-      Поздравления Ростовых кукол - уникальное сочетание интерактивности и душевности, поскольку в отличие от других, наши персонажи умеют разговаривать, что позволяет создавать яркие поздравления и вести живой диалог с каждым именинником и гостями, делая каждое представление по-настоящему уникальным
-    </div>
-
-    <div class="backdrop-blur-xs leading-6 border-dapink border rounded-[30px] py-[5%] px-[7%]">
-      Мы насыщаем праздник танцевальными блоками с музыкой, подобранной специально под ваши предпочтения, обеспечивая активное вовлечение всех гостей, и гарантируем большое количество ярких, запоминающихся фотографий благодаря активному взаимодействию кукол и созданию позитивных моментов, а также предлагаем торжественную церемонию вручения подарков через наших плюшевых гигантов, что добавляет особую радость и значимость моменту
-    </div>
-
-    <div class="border-dapink border rounded-[29px] p-[2%]">
-      <div class="flex flex-col gap-[13px] bg-lipink rounded-[24px] px-[5%] py-[4%] ">
-        <div class=" text-center text-white">
-          ПОСМОТРЕТЬ ПЕРСОНАЖЕЙ ДЛЯ ЭТОЙ УСЛУГИ
-        </div>
-      </div>
-    </div>
-
-    <div>
-      <div class="border-dapink border rounded-[40px] p-[4%]">
-        <div>
-          <img src="/src/assets/img/dandelion_sm.jpg" alt="" class="rounded-4xl w-full">
-        </div>
-      </div>
-
-      <div class="text-[20px] font-semibold mt-2">
-        ЗАЙЧИК-ОДУВАНЧИК
-      </div>
-    </div>
-
-    <div>
-      <div class="border-dapink border rounded-[40px] p-[4%]">
-        <div>
-          <img src="/src/assets/img/marshmallows_sm.jpg" alt="" class="rounded-4xl w-full">
-        </div>
-      </div>
-
-      <div class="text-[20px] font-semibold mt-2">
-        ЗАЙКА-ЗЕФИРКА
-      </div>
-    </div>
-
-    <div>
-      <div class="border-dapink border rounded-[40px] p-[4%]">
-        <div>
-          <img src="/src/assets/img/snowflake_sm.jpg" alt="" class="rounded-4xl w-full">
-        </div>
-      </div>
-
-      <div class="text-[20px] font-semibold mt-2">
-        ЗАЙКА-СНЕЖИНКА
-      </div>
-    </div>
-
-    <div>
-      <div class="border-dapink border rounded-[40px] p-[4%]">
-        <div>
-          <img src="/src/assets/img/zephyr_sm.jpg" alt="" class="rounded-4xl w-full">
-        </div>
-      </div>
-
-      <div class="text-[20px] font-semibold mt-2">
-        ЗЕФИР-ЗАЙЦЕВИЧ
-      </div>
-    </div>
-
-    <div v-if="!isOpenCharacters" @click="openGallery" class="
-      p-1.25
-      -bottom-8
-      border-[#C9185C] border
-      rounded-[20px]
-    ">
-      <div class="
-        bg-[#E05C92] hover:bg-[#4F7A23]/0
-        text-[14px] text-center text-white
-        rounded-2xl md:rounded-4xl
-        transition-all duration-200
-        cursor-pointer
-        px-5.25 md:px-5 py-2.5 md:py-2
-      ">
-        ПОСМОТРЕТЬ ЕЩЁ
-      </div>
-    </div>
-
-    <orderBlock />
-  </div>
+  </transition>
+  
 </template>
 
 <script setup>
 import { ref } from 'vue';
+import { toRefs } from 'vue';
 
 import orderBlock from '@/components/structure/orderBlock.vue';
+import TextBlock from '@/components/structure/textBlock.vue';
+import ServicePhotoBlock from '@/components/structure/servicePhotoBlock.vue';
+import serviceBlock from './serviceBlock.vue';
+
+let props = defineProps(['isOpenDolls'])
+
+const { isOpenDolls } = toRefs(props)
+
+let isOpenCong = ref(false)
 
 let isOpenCharacters = ref(false)
 </script>
+
+<style scoped>
+.v-enter-active,
+.v-leave-active,
+.open-characters-enter-active,
+.open-characters-leave-active {
+  transition: all 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  transform: translateX(-100vw);
+}
+
+.open-characters-enter-from,
+.open-characters-leave-to {
+  opacity: 0
+}
+
+</style>

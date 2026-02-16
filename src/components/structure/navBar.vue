@@ -186,7 +186,7 @@ function observeMainNav() {
 }
 </script>
 
-<style>
+<style scoped>
 .v-leave-from {
   width: 100%;
 }

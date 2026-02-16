@@ -9,9 +9,7 @@
         Галерея
       </h2>
 
-      <div class="px-8 py-[15px] border-dapink border rounded-[25px] mt-7 text-dablue text-[14px] text-center">
-        Эти фотографии подобраны специально для Вас
-      </div>
+      <TextBlockSmall text="Эти фотографии подобраны специально для Вас" />
 
       <div class="relative flex mt-[30px] gap-[13px]">
         <div class="flex flex-col gap-[13px]">
@@ -74,7 +72,7 @@
         relative
         flex
         mt-[13px] gap-[13px]
-        animate-stretch
+        animate-opacity
       ">
         <div class="flex flex-col gap-[13px]">
           <div class="border-dablue border p-2.5 rounded-[25px]">
@@ -129,11 +127,15 @@
           <img src="/src/assets/icons/gcircle_blue.svg" alt="" class="w-full">
         </div>
       </div>
+      
     </div>
 
 
 
-    <div v-if="!isOpenGallery" @click="openGallery" class="
+    <seeYet v-if="!isOpenGallery" @click="openGallery" :style="'w-max m-auto absolute inset-x-0'" :style2="'py-2'"
+    />
+
+    <!-- <div v-if="!isOpenGallery" @click="openGallery" class="
       w-max
       m-auto
       p-1.25
@@ -154,7 +156,7 @@
       ">
         ПОСМОТРЕТЬ ЕЩЁ
       </div>
-    </div>
+    </div> -->
 
     <!-- <div class="absolute inset-x-0 top-[2%] -z-1">
       <img src="/src/assets/img/bg_gal.svg" alt="" class="m-auto">
@@ -165,6 +167,9 @@
 <script setup>
 import { ref } from 'vue';
 import eventBus from '@/eventBus';
+
+import seeYet from '@/components/structure/seeYet.vue';
+import TextBlockSmall from '@/components/structure/textBlockSmall.vue';
 
 let isOpenGallery = ref(false)
 
