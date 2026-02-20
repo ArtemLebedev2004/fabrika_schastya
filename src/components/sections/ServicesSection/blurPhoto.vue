@@ -8,10 +8,10 @@
               </clipPath></defs>
             </svg>
 
-            <div class="absolute w-max h-max m-auto inset-0 text-center">
-              <div>УСЛУГИ</div>
-              <div>ПЕРСОНАЖИ</div>
-              <div>ЗАКАЗАТЬ</div>
+            <div class="absolute p-4 w-max h-[85%] m-auto inset-0 text-center text-dablue text-[17px] font-semibold flex flex-col justify-between">
+              <div>{{ menuText1 }}</div>
+              <div>{{ menuText2 }}</div>
+              <div v-if="menuText3">{{ menuText3 }}</div>
             </div>
         </div>
     </transition>
@@ -19,11 +19,12 @@
 </template>
 
 <script setup>
-import { toRefs } from 'vue';
+import { inject, toRefs } from 'vue';
 
 const props = defineProps(['isClickOnDolls'])
 const {isClickOnDolls} = toRefs(props)
 
+const servicesArr
 </script>
 
 <style scoped>

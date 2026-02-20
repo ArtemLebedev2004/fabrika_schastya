@@ -13,9 +13,8 @@
       <TextBlockSmall text="Мы предлагаем широкий спектр способностей, которые сделают Ваш праздник незабываемым" />
 
       <div class="mt-9.5 flex flex-col gap-8.5">
-        <typeServiceBlock
-          serv_type_photo="/src/assets/img/serv_photo1.png"
-          title_type="РОСТОВЫЕ КУКЛЫ"  
+        <typeServiceBlock v-for="service in servicesArr" :key="service.id"
+          :service=service
         />
         
         <ExpressCong :isOpenDolls=isClickOnDolls />
@@ -185,39 +184,55 @@ let isClickOnDolls = ref(false)
 let isOpenGallery = ref(false)
 // let isOpenDolls = ref(false)
 
-
 eventBus.on('openGallery', (data) => {            // from gallerySection
   isOpenGallery.value = data
 })
 
 document.body.scrollTop = 0
 
+let servicesArr = [
+
+  {
+    id: 1,
+    titleTypeService: 'РОСТОВЫЕ КУКЛЫ',
+    serveTypePhoto: '/src/assets/img/serv_photo1.png',
+    menuText1: 'УСЛУГИ',
+    menuText2: 'ПЕРСОНАЖИ',
+    menuText3: 'ЗАКАЗАТЬ',
+    services: {
+      cong: {
+        titleService: 'ЭКСПРЕСС/СТАНДАРТ ПОЗДРАВЛЕНИЕ',
+        timeService: '(10-30 минут)',
+        priceService: '2600/3200 РУБ + ТАКСИ'
+      },   
+    }
+  },
+
+  // animators: {
+  //   id: 2,
+  //   titleTypeService: 'АНИМАЦИОННЫЕ ПЕРСОНАЖИ',
+  //   menuText1: 'УСЛУГИ',
+  //   menuText2: 'ПЕРСОНАЖИ',
+  //   menuText3: 'ЗАКАЗАТЬ'
+  // },
+
+  // party: {
+  //   id: 3,
+  //   titleTypeService: 'ПАТИ И КВЕСТЫ',
+  //   menuText1: 'УСЛУГИ',
+  //   menuText2: 'ЗАКАЗАТЬ',
+  // },
+
+  // planetarium: {
+  //   id: 4,
+  //   titleTypeService: 'МОБИЛЬНЫЙ ПЛАНЕТАРИЙ',
+  //   menuText1: 'УСЛУГИ',
+  //   menuText2: 'ПЕРСОНАЖИ',
+  //   menuText3: 'ЗАКАЗАТЬ'
+  // }
+]
+
 </script>
 
 <style scoped>
-.bounce-leave-from {
-  opacity: 1;
-}
-
-.bounce-leave-to {
-  opacity: 0;
-}
-
-/* .bounce-enter-active {
-  opacity: bounce-in 0.5s;
-}
-.bounce-leave-active {
-  animation: bounce-in 0.5s reverse;
-}
-@keyframes bounce-in {
-  0% {
-    transform: scale(0);
-  }
-  50% {
-    transform: scale(1.25);
-  }
-  100% {
-    transform: scale(1);
-  }
-} */
 </style>
