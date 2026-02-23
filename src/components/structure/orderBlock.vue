@@ -1,5 +1,5 @@
 <template>
-  <div @click="isOpenOrder = !isOpenOrder" class="border-dablue border rounded-[29px] p-[2%]">
+  <div v-if="!withoutButton" @click="isOpenOrder = !isOpenOrder" class="border-dablue border rounded-[29px] p-[2%]">
     <div class="flex flex-col gap-[13px] bg-daliblue rounded-[24px] px-[5%] py-[4%] ">
       <div class=" text-center text-white">
         ЗАКАЗАТЬ <br> ИЛИ УЗНАТЬ ПОДРОБНЕЕ
@@ -8,7 +8,7 @@
   </div>
 
   <transition>
-    <div v-if="isOpenOrder" class="flex flex-col gap-[23px]">
+    <div v-if="isOpenOrder || withoutButton" class="flex flex-col gap-[23px]" :class="withoutButton ? 'mt-8' : ''">
       <div>
         <div class="flex justify-center gap-7">
           <div class="relative basis-1/6">
@@ -52,14 +52,18 @@
       </a>
     </div>
   </transition>
-  
-  
+
+
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, toRefs } from 'vue';
 
 let isOpenOrder = ref(false)
+
+const props = defineProps(['withoutButton'])
+const {withoutButton} = toRefs(props)
+
 </script>
 
 <style scoped>

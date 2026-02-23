@@ -8,7 +8,7 @@
 
             <div class="absolute inset-x-[4%] inset-y-[6.5%]">
                 <img :src="service.serveTypePhoto" alt="" class="w-full h-full rounded-4xl min-[415px]:rounded-[36px]">
-                
+
                 <transition>
                     <div v-if="isClickOnDolls" class="absolute -inset-[0.5%] ">
                         <svg @click="isClickOnBlur = true" width="100%" height="100%" viewBox="0 0 311 172" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -18,14 +18,20 @@
                           </clipPath></defs>
                         </svg>
 
-                        <div class="absolute p-4 w-max h-[85%] m-auto inset-0 text-center text-dablue text-[17px] font-semibold flex flex-col justify-between">
-                          <div>{{ service.menuText1 }}</div>
-                          <div>{{ service.menuText2 }}</div>
-                          <div v-if="service.menuText3">{{ service.menuText3 }}</div>
+                        <div  class="absolute p-4 w-max h-[85%] m-auto inset-0 text-center text-dablue text-[17px] font-semibold flex flex-col justify-between items-center">
+                          <div v-for="menuText in service.menuTexts" :key="menuText" @click="isClickMenu = menuText" class="relative w-max">
+                            <div class="relative z-1">
+                              {{ menuText }}
+                            </div>
+
+                            <div v-if="isClickMenu == menuText" class="absolute -inset-x-1 top-[50%] bottom-0 bg-pink-line-text rounded-full z-0">
+
+                            </div>
+                          </div>
                         </div>
                     </div>
                 </transition>
-                
+
                 <!-- <blurPhoto
                   :isClickOnDolls="isClickOnDolls"
                   @isClickOnBlur="isClickOnBlur = true"
@@ -49,11 +55,157 @@
         {{service.titleTypeService}}
         </div>
     </div>
+
+
+    <transition>
+      <div v-if="isClickOnDolls && isClickMenu == 'УСЛУГИ'" class="text-[14px] flex flex-col gap-[23px]">
+        <div v-for="insideService in service.services" :key="insideService">
+          <div  @click="isClickServiceId.indexOf(insideService.id) != -1 ? isClickServiceId.splice(isClickServiceId.indexOf(insideService.id), 1) : isClickServiceId.push(insideService.id)" class="border-dapink border rounded-[40px] p-[3.5%]">
+            <div class="flex flex-col gap-[13px] bg-liliblue rounded-4xl px-[8.5%] py-[5%] ">
+              <div class="text-[17px] font-semibold text-center">
+                {{insideService.titleService}}
+              </div>
+
+              <div class="text-center">
+                {{insideService.timeService}}
+              </div>
+
+              <div class="border-dablue border rounded-full px-[4.5%] py-[3%] text-center font-semibold text-dablue">
+                {{insideService.priceService}}
+              </div>
+
+              <div class="text-center font-semibold text-dablue">
+                НАЖМИТЕ, <br> ЧТОБЫ УЗНАТЬ БОЛЬШЕ
+              </div>
+            </div>
+          </div>
+
+
+          <transition>
+            <div v-if="isClickServiceId.indexOf(insideService.id) != -1" class="flex flex-col gap-[23px] mt-[23px]">
+              <TextBlock
+                v-for="text in insideService.texts" :key="text"
+                :text="text"
+              />
+
+              <div @click="isOpenServiceCharactersId.indexOf(insideService.id) != -1 ? isOpenServiceCharactersId.splice(isOpenServiceCharactersId.indexOf(insideService.id), 1) : isOpenServiceCharactersId.push(insideService.id)"  class="border-dapink border rounded-[29px] p-[2%]">
+                <div class="flex flex-col gap-[13px] bg-lipink rounded-[24px] px-[5%] py-[4%] ">
+                  <div class=" text-center text-white">
+                    ПОСМОТРЕТЬ ПЕРСОНАЖЕЙ ДЛЯ ЭТОЙ УСЛУГИ
+                  </div>
+                </div>
+              </div>
+
+              <transition name="open-characters">
+                <div v-if="isOpenServiceCharactersId.indexOf(insideService.id) != -1" class="flex flex-col gap-[23px]">
+                  <div v-for="character in insideService.characters" :key="character">
+                      <div class="border-dapink border rounded-[40px] p-[4%]">
+                          <div>
+                            <img :src="character.img" alt="" class="rounded-4xl w-full">
+                          </div>
+                      </div>
+
+                      <div class="text-[20px] font-semibold mt-2">
+                          {{character.title}}
+                      </div>
+                  </div>
+                </div>
+              </transition>
+
+              <orderBlock />
+            </div>
+          </transition>
+        </div>
+
+        <orderBlock />
+      </div>
+    </transition>
+
+    <transition name="open-characters">
+      <div v-if="isClickOnDolls && isClickMenu == 'ПЕРСОНАЖИ'" class="flex flex-col gap-[23px]">
+        <div v-for="character in service.characters" :key="character">
+          <div @click="isClickCharactersId.indexOf(character.id) != -1 ? isClickCharactersId.splice(isClickCharactersId.indexOf(character.id), 1) : isClickCharactersId.push(character.id)">
+            <div class=" border rounded-[40px] p-[4%]" :class="isClickCharactersId.indexOf(character.id) != -1 ? 'border-dablue' : 'border-dapink'">
+                <div class="rounded-4xl" :class="isClickCharactersId.indexOf(character.id) != -1 ? 'bg-[#A0C6EA]' : 'bg-[#FCC6D4]'">
+                  <img :src="character.gen_img" alt="" class="rounded-4xl w-full">
+                  <div class="text-center text-[12px] p-[3%]">
+                    УЗНАТЬ ПОДРОБНЕЕ
+                  </div>
+                </div>
+            </div>
+
+            <div class="text-[20px] font-semibold mt-2">
+                {{character.title}}
+            </div>
+          </div>
+
+          <transition name="open-characters">
+            <div v-if="isClickCharactersId.indexOf(character.id) != -1" class="mt-8 flex flex-col gap-[23px]">
+              <div v-for="img in character.imgs" :key="img" class="border-dapink border rounded-[40px] p-[4%]">
+                  <div class="rounded-4xl">
+                    <img :src="img" alt="" class="rounded-4xl w-full">
+                  </div>
+              </div>
+
+              <div @click="isOpenCharacterServicesId.indexOf(character.id) != -1 ? isOpenCharacterServicesId.splice(isOpenCharacterServicesId.indexOf(character.id), 1) : isOpenCharacterServicesId.push(character.id)"  class="border-dapink border rounded-[29px] p-[2%]">
+                <div class="bg-lipink rounded-[24px] px-[5%] py-[4%] ">
+                  <div class=" text-center text-white">
+                    ПОСМОТРЕТЬ УСЛУГИ С ЭТИМ ПЕРСОНАЖЕМ
+                  </div>
+                </div>
+              </div>
+
+              <transition>
+                <div v-if="isOpenCharacterServicesId.indexOf(character.id) != -1" class="text-[14px] flex flex-col gap-[23px]">
+                  <div v-for="characterService in character.services" :key="characterService">
+                    <div  @click="isOpenCharacterInsideServicesId.indexOf(characterService.id) != -1 ? isOpenCharacterInsideServicesId.splice(isOpenCharacterInsideServicesId.indexOf(characterService.id), 1) : isOpenCharacterInsideServicesId.push(characterService.id)" class="border-dapink border rounded-[40px] p-[3.5%]">
+                      <div class="flex flex-col gap-[13px] bg-liliblue rounded-4xl px-[8.5%] py-[5%] ">
+                        <div class="text-[17px] font-semibold text-center">
+                          {{characterService.titleService}}
+                        </div>
+
+                        <div class="text-center">
+                          {{characterService.timeService}}
+                        </div>
+
+                        <div class="border-dablue border rounded-full px-[4.5%] py-[3%] text-center font-semibold text-dablue">
+                          {{characterService.priceService}}
+                        </div>
+
+                        <div class="text-center font-semibold text-dablue">
+                          НАЖМИТЕ, <br> ЧТОБЫ УЗНАТЬ БОЛЬШЕ
+                        </div>
+                      </div>
+                    </div>
+
+                    <transition>
+                      <div v-if="isOpenCharacterInsideServicesId.indexOf(characterService.id) != -1" class="flex flex-col gap-[23px] mt-[23px]">
+                        <TextBlock
+                          v-for="text in characterService.texts" :key="text"
+                          :text="text"
+                        />
+                      </div>
+                    </transition>
+                  </div>
+                </div>
+              </transition>
+              
+              <orderBlock v-if="character.id != Object.values(service.characters).pop().id" />
+            </div>
+          </transition>
+
+        </div>
+
+        <orderBlock  />
+      </div>
+    </transition>
 </template>
 
 <script setup>
 import { ref, toRefs } from 'vue';
 
+import orderBlock from '@/components/structure/orderBlock.vue';
+import TextBlock from '@/components/structure/textBlock.vue';
 // import blurPhoto from './blurPhoto.vue';
 
 const props = defineProps(['service'])
@@ -62,6 +214,17 @@ const {service} = toRefs(props)
 let isClickOnDolls = ref(false)
 let isClickOnBlur = ref(false)
 let isClickOnArrow = ref(false)
+
+let isClickMenu = ref(false)
+let isClickServiceId = ref([])
+let isClickCharactersId = ref([])
+
+
+let isOpenServiceCharactersId = ref([])
+let isOpenCharacterServicesId = ref([])
+let isOpenCharacterInsideServicesId = ref([])
+
+
 
 function swimBlur() {
   if (!isClickOnBlur.value) {
@@ -82,12 +245,19 @@ function swimBlur() {
 
 <style scoped>
 .v-enter-active,
-.v-leave-active {
+.v-leave-active,
+.open-characters-enter-active,
+.open-characters-leave-active {
   transition: all 0.5s ease;
 }
 
 .v-enter-from,
 .v-leave-to {
   transform: translateX(-100vw);
+}
+
+.open-characters-enter-from,
+.open-characters-leave-to {
+  opacity: 0
 }
 </style>
