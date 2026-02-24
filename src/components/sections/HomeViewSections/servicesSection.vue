@@ -924,38 +924,58 @@ let servicesArr = [
           text1: 'Это 15-минутное камерное поздравление от вашего любимого игрового героя. В отличие от шумных игровых программ, здесь акцент делается на тесном, трогательном взаимодействии. Именинник остается один на один со своим кумиром, получая возможность не только услышать поздравления, но и поговорить о своих мечтах и желаниях, поделиться успехами, узнать о талантах персонажа, а также насладиться небольшим танцем и игрой. Это нежное и личное поздравление, созданное для особенных моментов.',
         },
         characters: {
-          dandelion: {
-            img: '/src/assets/img/big_dolls/dandelion/sm/dandelion_sm.jpg',
-            title: 'ЗАЙЧИК-ОДУВАНЧИК'
+          trolli: {
+            img: '/src/assets/img/animators/trolli/sm/trolli_sm.jpg',
+            title: 'РОЗОЧКА ИЗ М/Ф «ТРОЛЛИ»'
           },
-          marshmallow: {
-            img: '/src/assets/img/big_dolls/marshmallows/sm/marshmallows_sm.jpg',
-            title: 'ЗАЙКА-ЗЕФИРКА'
+          unicorn: {
+            img: '/src/assets/img/animators/unicorn/sm/unicorn_sm.jpg',
+            title: 'ЕДИНОРОЖКА ИСКОРКА ИЗ «МАЙ ЛИТТЛ ПОНИ»'
           },
-          snowflake: {
-            img: '/src/assets/img/big_dolls/snowflake/sm/snowflake_sm.jpg',
-            title: 'ЗАЙКА-СНЕЖИНКА'
+          sky: {
+            img: '/src/assets/img/animators/sky/sm/sky_sm.jpg',
+            title: 'СКАЙ ИЗ ЩЕНЯЧЬЕГО ПАТРУЛЯ'
           },
-          zephyr: {
-            img: '/src/assets/img/big_dolls/zephyr/sm/zephyr_sm.jpg',
-            title: 'ЗЕФИР-ЗАЙЦЕВИЧ'
+          marshal: {
+            img: '/src/assets/img/animators/marshal/sm/marshal_sm.jpg',
+            title: 'МАРШАЛ ИЗ ЩЕНЯЧЬЕГО ПАТРУЛЯ'
           },
-          pupsBoy: {
-            img: '/src/assets/img/big_dolls/pups_boy/sm/pups_boy_sm.jpg',
-            title: 'ПУПС МАЛЬЧИК - МИРОН'
+          ice_cream: {
+            img: '/src/assets/img/animators/ice_cream/sm/ice_cream_sm.jpg',
+            title: 'АПЕЛЬСИНОВОЕ МОРОЖЕНОЕ'
           },
-          pupsGirl: {
-            img: '/src/assets/img/big_dolls/pups_girl/sm/pups_girl_sm.jpg',
-            title: 'ПУПС ДЕВОЧКА - ЕВА'
+          spider: {
+            img: '/src/assets/img/animators/spider/sm/spider_sm.jpg',
+            title: 'ЧЕЛОВЕК-ПАУК'
           },
-          lolDoll: {
-            img: '/src/assets/img/big_dolls/doll_lol/sm/doll_lol_sm.jpg',
-            title: 'КУКЛА ЛОЛ'
+          cold_heart: {
+            img: '/src/assets/img/animators/cold_heart/sm/cold_heart_sm.jpg',
+            title: 'АННА ИЗ ХОЛОДНОГО СЕРДЦА'
           },
-          minion: {
-            img: '/src/assets/img/big_dolls/minion/sm/minion_sm.jpg',
-            title: 'МИНЬОН'
+          snow_white: {
+            img: '/src/assets/img/animators/snow_white/sm/snow_white_sm.jpg',
+            title: 'БЕЛОСНЕЖКА'
           },
+          pirate: {
+            img: '/src/assets/img/animators/pirate/sm/pirate_sm.jpg',
+            title: 'ПИРАТКА'
+          },
+          batman: {
+            img: '/src/assets/img/animators/batman/sm/batman_sm.jpg',
+            title: 'БЭТМЕН'
+          },
+          astronaut: {
+            img: '/src/assets/img/animators/astronaut/sm/astronaut_sm.jpg',
+            title: 'КОСМОНАВТ'
+          },
+          tiktok: {
+            img: '/src/assets/img/animators/tiktok/sm/tiktok_sm.jpg',
+            title: 'БЛОГЕР ИЗ ТИКТОКА'
+          },
+          gramm: {
+            img: '/src/assets/img/animators/gramm/sm/gramm_sm.jpg',
+            title: 'БЛОГЕР ИЗ ИНСТАГРАММА'
+          }
         }
       },
 
@@ -968,48 +988,68 @@ let servicesArr = [
           text1: 'Это комплекс разнообразных активностей, которые помогают детям развлекаться и развивать свои навыки',
         },
         characters: {
-          dandelion: {
-            img: '/src/assets/img/big_dolls/dandelion/sm/dandelion_sm.jpg',
-            title: 'ЗАЙЧИК-ОДУВАНЧИК'
+          trolli: {
+            img: '/src/assets/img/animators/trolli/sm/trolli_sm.jpg',
+            title: 'РОЗОЧКА ИЗ М/Ф «ТРОЛЛИ»'
           },
-          marshmallow: {
-            img: '/src/assets/img/big_dolls/marshmallows/sm/marshmallows_sm.jpg',
-            title: 'ЗАЙКА-ЗЕФИРКА'
+          unicorn: {
+            img: '/src/assets/img/animators/unicorn/sm/unicorn_sm.jpg',
+            title: 'ЕДИНОРОЖКА ИСКОРКА ИЗ «МАЙ ЛИТТЛ ПОНИ»'
           },
-          snowflake: {
-            img: '/src/assets/img/big_dolls/snowflake/sm/snowflake_sm.jpg',
-            title: 'ЗАЙКА-СНЕЖИНКА'
+          sky: {
+            img: '/src/assets/img/animators/sky/sm/sky_sm.jpg',
+            title: 'СКАЙ ИЗ ЩЕНЯЧЬЕГО ПАТРУЛЯ'
           },
-          zephyr: {
-            img: '/src/assets/img/big_dolls/zephyr/sm/zephyr_sm.jpg',
-            title: 'ЗЕФИР-ЗАЙЦЕВИЧ'
+          marshal: {
+            img: '/src/assets/img/animators/marshal/sm/marshal_sm.jpg',
+            title: 'МАРШАЛ ИЗ ЩЕНЯЧЬЕГО ПАТРУЛЯ'
           },
-          pupsBoy: {
-            img: '/src/assets/img/big_dolls/pups_boy/sm/pups_boy_sm.jpg',
-            title: 'ПУПС МАЛЬЧИК - МИРОН'
+          ice_cream: {
+            img: '/src/assets/img/animators/ice_cream/sm/ice_cream_sm.jpg',
+            title: 'АПЕЛЬСИНОВОЕ МОРОЖЕНОЕ'
           },
-          pupsGirl: {
-            img: '/src/assets/img/big_dolls/pups_girl/sm/pups_girl_sm.jpg',
-            title: 'ПУПС ДЕВОЧКА - ЕВА'
+          spider: {
+            img: '/src/assets/img/animators/spider/sm/spider_sm.jpg',
+            title: 'ЧЕЛОВЕК-ПАУК'
           },
-          lolDoll: {
-            img: '/src/assets/img/big_dolls/doll_lol/sm/doll_lol_sm.jpg',
-            title: 'КУКЛА ЛОЛ'
+          cold_heart: {
+            img: '/src/assets/img/animators/cold_heart/sm/cold_heart_sm.jpg',
+            title: 'АННА ИЗ ХОЛОДНОГО СЕРДЦА'
           },
-          minion: {
-            img: '/src/assets/img/big_dolls/minion/sm/minion_sm.jpg',
-            title: 'МИНЬОН'
+          snow_white: {
+            img: '/src/assets/img/animators/snow_white/sm/snow_white_sm.jpg',
+            title: 'БЕЛОСНЕЖКА'
+          },
+          pirate: {
+            img: '/src/assets/img/animators/pirate/sm/pirate_sm.jpg',
+            title: 'ПИРАТКА'
+          },
+          batman: {
+            img: '/src/assets/img/animators/batman/sm/batman_sm.jpg',
+            title: 'БЭТМЕН'
+          },
+          astronaut: {
+            img: '/src/assets/img/animators/astronaut/sm/astronaut_sm.jpg',
+            title: 'КОСМОНАВТ'
+          },
+          tiktok: {
+            img: '/src/assets/img/animators/tiktok/sm/tiktok_sm.jpg',
+            title: 'БЛОГЕР ИЗ ТИКТОКА'
+          },
+          gramm: {
+            img: '/src/assets/img/animators/gramm/sm/gramm_sm.jpg',
+            title: 'БЛОГЕР ИЗ ИНСТАГРАММА'
           }
         }
       }
     },
     characters: {
-        dandelion: {
+        trolli: {
           id: 'animators_character_1',
-          gen_img: '/src/assets/img/big_dolls/dandelion/sm/dandelion_sm.jpg',
+          gen_img: '/src/assets/img/animators/trolli/sm/trolli_sm.jpg',
           imgs: {
-            img1: '/src/assets/img/big_dolls/dandelion/sm/dandelion1_sm.jpg',
-            img2: '/src/assets/img/big_dolls/dandelion/sm/dandelion2_sm.jpg',
+            img1: '/src/assets/img/animators/dandelion/sm/dandelion1_sm.jpg',
+            img2: '/src/assets/img/animators/dandelion/sm/dandelion2_sm.jpg',
           },
           title: 'ЗАЙЧИК-ОДУВАНЧИК',
           services: {
@@ -1049,11 +1089,11 @@ let servicesArr = [
 
         marshmallows: {
           id: 'dolls_character_2',
-          gen_img: '/src/assets/img/big_dolls/marshmallows/sm/marshmallows_sm.jpg',
+          gen_img: '/src/assets/img/animators/marshmallows/sm/marshmallows_sm.jpg',
           imgs: {
-            img1: '/src/assets/img/big_dolls/marshmallows/sm/marshmallows1_sm.jpg',
-            img2: '/src/assets/img/big_dolls/marshmallows/sm/marshmallows2_sm.jpg',
-            img3: '/src/assets/img/big_dolls/marshmallows/sm/marshmallows3_sm.jpg',
+            img1: '/src/assets/img/animators/marshmallows/sm/marshmallows1_sm.jpg',
+            img2: '/src/assets/img/animators/marshmallows/sm/marshmallows2_sm.jpg',
+            img3: '/src/assets/img/animators/marshmallows/sm/marshmallows3_sm.jpg',
           },
           title: 'ЗАЙКА-ЗЕФИРКА',
           services: {
@@ -1093,11 +1133,11 @@ let servicesArr = [
 
         snowflake: {
           id: 'dolls_character_3',
-          gen_img: '/src/assets/img/big_dolls/snowflake/sm/snowflake_sm.jpg',
+          gen_img: '/src/assets/img/animators/snowflake/sm/snowflake_sm.jpg',
           imgs: {
-            img1: '/src/assets/img/big_dolls/snowflake/sm/snowflake1_sm.jpg',
-            img2: '/src/assets/img/big_dolls/snowflake/sm/snowflake2_sm.jpg',
-            img3: '/src/assets/img/big_dolls/snowflake/sm/snowflake3_sm.jpg',
+            img1: '/src/assets/img/animators/snowflake/sm/snowflake1_sm.jpg',
+            img2: '/src/assets/img/animators/snowflake/sm/snowflake2_sm.jpg',
+            img3: '/src/assets/img/animators/snowflake/sm/snowflake3_sm.jpg',
           },
           title: 'ЗАЙКА-СНЕЖИНКА',
           services: {
@@ -1137,11 +1177,11 @@ let servicesArr = [
 
         zephyr: {
           id: 'dolls_character_4',
-          gen_img: '/src/assets/img/big_dolls/zephyr/sm/zephyr_sm.jpg',
+          gen_img: '/src/assets/img/animators/zephyr/sm/zephyr_sm.jpg',
           imgs: {
-            img1: '/src/assets/img/big_dolls/zephyr/sm/zephyr1_sm.jpg',
-            img2: '/src/assets/img/big_dolls/zephyr/sm/zephyr2_sm.jpg',
-            img3: '/src/assets/img/big_dolls/zephyr/sm/zephyr3_sm.jpg',
+            img1: '/src/assets/img/animators/zephyr/sm/zephyr1_sm.jpg',
+            img2: '/src/assets/img/animators/zephyr/sm/zephyr2_sm.jpg',
+            img3: '/src/assets/img/animators/zephyr/sm/zephyr3_sm.jpg',
           },
           title: 'ЗЕФИР-ЗАЙЦЕВИЧ',
           services: {
